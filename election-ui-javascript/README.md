@@ -27,6 +27,9 @@ Assessment Time
 In the assessment we will ask you to screenshare your working environment and talk through the following with us:
 
 1) What does this system do? What are its key features?
+shows the number of votes of a particular candiate for a election
+
+
 2) New Feature requests! - The election product team have some feature requests that we would like you to take a look at. They can be found in `tasks.md`.
 
 If you have any problems with any of this, please get in touch via your recruitment contact.

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Logo from './logo/logo';
-import fetchData from '../dataFetcher';
-import Scorecard from './Scorecard';
-import './Scoreboard.css';
+import React, { useState, useEffect } from "react";
+import Logo from "./logo/logo";
+import fetchData from "../dataFetcher";
+import Scorecard from "./Scorecard";
+import "./Scoreboard.css";
 
 function Scoreboard() {
   const [loading, setLoading] = useState(true);
@@ -13,7 +13,16 @@ function Scoreboard() {
     try {
       setLoading(true);
       const resultData = await fetchData();
-      setResults(resultData.results);
+      const resultsD = resultData.resultData.results;
+      const candidateMap = resultData.candidateMap;
+      const modifiedData = resultsD.map((item, index) => {
+        if (item.candidateId === candidateMap[index].id) {
+          item.name = candidateMap[index].name;
+        }
+        return item;
+      });
+
+      setResults(modifiedData);
       setLoading(false);
     } catch (e) {
       setLoading(false);
@@ -31,15 +40,19 @@ function Scoreboard() {
         <Logo language="en" />
       </header>
       <main>
-        {
-          loading ? <h2>Loading...</h2> :
-          error ? <h1>Error</h1> :
+        {loading ? (
+          <h2>Loading...</h2>
+        ) : error ? (
+          <h1>Error</h1>
+        ) : (
           <>
             <h1>Results</h1>
             <Scorecard results={results} />
-            <a className="Scoreboard-refresh" onClick={getData}>Refresh</a>
+            <a className="Scoreboard-refresh" onClick={getData}>
+              Refresh
+            </a>
           </>
-        }
+        )}
       </main>
     </div>
   );
