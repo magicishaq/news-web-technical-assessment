@@ -3,7 +3,7 @@ import { fetchResultData, fetchCandidateMap } from '../fakeAPI'; // Lets imagine
 async function fetchResults() {
   const resultData = await fetchResultData();
   const candidateMap = fetchCandidateMap();
-
+//Task 1 
   return {resultData, candidateMap} ;
 }
 

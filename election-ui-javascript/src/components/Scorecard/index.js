@@ -1,6 +1,7 @@
 import './Scorecard.css';
 
 function Scorecard({ results }) {
+ 
   if (!results || results.length === 0) {
     return <div>No results</div>;
   }
@@ -8,7 +9,7 @@ function Scorecard({ results }) {
   let scores = [];
   for (let i=0; i < results.length; i++) {
     scores.push(
-      <tr key={i}>
+      <tr key={i} >
         <td>{results[i].party}</td>
         <td>{results[i].name}</td>
         <td>{results[i].votes}</td>
