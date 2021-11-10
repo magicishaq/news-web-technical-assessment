@@ -7,11 +7,12 @@ function Scorecard({ results, winner }) {
   }
   
 //Task 2 
+const accessibiltyLabel = ":is in the lead"
   let scores = [];
   //Task 1 
   for (let i=0; i < results.length; i++) {
     scores.push(
-      <tr key={i} id={parseInt(results[i].votes) === winner ? "Scorecard--winner": null} >
+      <tr key={i} id={parseInt(results[i].votes) === winner ? "Scorecard--winner": null} aria-label={parseInt(results[i].votes) === winner ? results[i].name + accessibiltyLabel : ""} >
         <td>{results[i].party}</td>
         <td>{results[i].name}</td>
         <td>{results[i].votes}</td>

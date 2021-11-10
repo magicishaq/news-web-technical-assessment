@@ -17,7 +17,7 @@ const Loading = () => {
             </tbody>
           </table>
       </div>
-      <p>Loading...</p>
+          <pre>Loading.... </pre>
       </>)
 }
 
