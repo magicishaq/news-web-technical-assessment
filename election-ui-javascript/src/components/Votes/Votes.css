@@ -1,0 +1,19 @@
+/* Task 2  */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .item{
+      margin-top: 20px; 
+      margin-bottom: 20px; 
+    }
+    
+    strong{
+      background : #bb1919; 
+      color: white; 
+      border-radius: 5px; 
+      padding: 3px; 
+    }
